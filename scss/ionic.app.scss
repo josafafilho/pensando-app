@@ -72,15 +72,21 @@ ion-side-menu {
 
 }
 
-.publicacoes, .publicacao {
+.publicacoes, .publicacao, .noticias, .noticia {
 
-  .publicacao-item {
+  .publicacao-item, .noticia-item {
 
     &.item-button-right {
       padding-right: 95px;
     }
 
-    .volume {
+    .featured_image {
+      height: auto;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .volume, .categorias {
       color: $stable;
       font-weight: bold;
     }

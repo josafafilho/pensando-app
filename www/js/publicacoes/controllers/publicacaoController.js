@@ -95,7 +95,7 @@ angular.module('pensando.publicacoes')
 
         function shareError(error) {
             console.error(JSON.stringify(error));
-            alert('Falha ao compartilhar a publicação!', 'Ocorreu um erro enquanto tentávamos compartilhar sua publicação.');
+            alert('Falha ao compartilhar a publicação!', 'Ocorreu um erro enquanto tentávamos compartilhar esta publicação.');
         }
 
         function alert(title, text) {

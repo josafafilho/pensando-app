@@ -1,0 +1,21 @@
+<ion-view view-title="Notícias" class="noticias">
+    <ion-content>
+        <ion-list>
+            <ion-item class="noticia-item item-text-wrap item-thumbnail-left"
+                      ng-repeat="noticia in noticias"
+                      ng-click="select(noticia)">
+
+                <img class="featured_image" ng-src="{{noticia.getFeaturedImageUrl()}}"/>
+
+                <p class="categorias">{{noticia.getCategoriesString()}}</p>
+
+                <h2 class="title">{{noticia.title}}</h2>
+
+                <p class="date">{{noticia.date | date : 'shortDate'}}</p>
+
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="hasNextPage" on-infinite="loadMore()" distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

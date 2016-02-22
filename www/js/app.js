@@ -3,7 +3,8 @@ angular.module('pensando',
         'ionic',
         'ngCordova',
         'pensando.controllers',
-        'pensando.publicacoes'
+        'pensando.publicacoes',
+        'pensando.noticias'
     ])
 
     .run(function ($ionicPlatform, $rootScope, $state, $stateParams) {
@@ -54,6 +55,16 @@ angular.module('pensando',
                 url: '/noticias',
                 views: {
                     'menuContent': {
+                        controller: 'NoticiasCtrl',
+                        templateUrl: 'js/noticias/views/noticias.html',
+                    }
+                }
+            })
+            .state('app.noticia', {
+                url: '/noticias/:noticiaID',
+                views: {
+                    'menuContent': {
+                        controller: 'NoticiaCtrl',
                         templateUrl: 'js/noticias/views/noticia.html',
                     }
                 }

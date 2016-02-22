@@ -1,5 +1,29 @@
-<ion-view view-title="Notícias">
+<ion-view class="noticia">
+    <ion-nav-title>{{noticia.title}}</ion-nav-title>
     <ion-content>
-        <h1>Notícias</h1>
+
+        <div class="list card noticia-item">
+
+            <div class="item item-body">
+                <p class="categorias">{{noticia.getCategoriesString()}}</p>
+
+                <h2 class="title">{{noticia.title}}</h2>
+
+                <p class="date">{{noticia.date | date : 'shortDate'}}</p>
+
+            </div>
+            <div class="item item-body">
+                <img class="full-image" ng-src="{{noticia.getFeaturedImageUrl()}}"/>
+
+                <p ng-bind-html="noticia.content"></p>
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" ng-click="share()">
+                    <i class="icon ion-share"></i>
+                    Compartilhar
+                </a>
+            </div>
+        </div>
     </ion-content>
 </ion-view>
